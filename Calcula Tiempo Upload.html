@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<script type='text/javascript'>
+			function calcula() {
+				var numeroBytes = $('#numeroBytes').val();
+				var velocidad = $('#velocidad').val();
+				var numeroBits = numeroBytes * 8;
+				var numeroBitsPorSegundo = velocidad * 1000000;
+				var segundosTotales = numeroBits / numeroBitsPorSegundo;
+				var minutosTotales = Math.round(segundosTotales / 60);
+				
+				alert("El documento tardará por al menos " + minutosTotales + " minutos.");
+			}
+		</script>
+		
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<h1>Calcula el tiempo de upload de un documento</h1>
+			<br>
+		</div>
+
+		<div>
+			Numero de Bytes
+			<br>
+			<input type="text" id="numeroBytes">
+			<br>
+			<br>
+			Velocidad maxima de upload (mbps)
+			<br>
+			<input type="text" id="velocidad" value="1">
+			<br><br>
+			<button id="calcula" onclick="calcula();">Calcula</button>
+		</div>
+
+	</body>
+	
+</html>
