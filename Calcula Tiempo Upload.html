@@ -7,6 +7,7 @@
 		<script type='text/javascript'>
 			function calcula() {
 				var numeroBytes = $('#numeroBytes').val();
+				numeroBytes = numeroBytes.replace(/\./g, "");
 				var velocidad = $('#velocidad').val();
 				var numeroBits = numeroBytes * 8;
 				var numeroBitsPorSegundo = velocidad * 1000000;
@@ -15,14 +16,6 @@
 				
 				alert("El documento tardará por al menos " + minutosTotales + " minutos.");
 			}
-			
-			$('#numeroBytes, #velocidad').keypress(function (e) {
-				 var key = e.which;
-				 if(key == 13)  // the enter key code
-				  {
-				    calcula();
-				  }
-			});
 		</script>
 		
 		<style>
